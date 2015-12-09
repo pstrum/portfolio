@@ -1,9 +1,0 @@
-.social-links {
-  svg {
-    fill: color(accent, light);
-    transition: all .2s ease-out;
-    &:hover {
-      @extend %svg-hover-fill;
-    }
-  }
-}
