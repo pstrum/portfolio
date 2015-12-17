@@ -19,3 +19,13 @@
   fill: color(secondary);
   transition: all .2s ease-out;
 }
+
+%button {
+  padding: $base-line-height / 2 $base-line-height * 2;
+  font-size: type-scale(2);
+  color: color(base);
+  text-decoration: none;
+  background-color: color(primary);
+  border-radius: $base-line-height / 3;
+  transition: .2s ease-in;
+}

@@ -26,13 +26,7 @@
       background-color: rgba(0,0,0,.8);
       figcaption {
         a {
-          padding: $base-line-height / 2 $base-line-height * 2;
-          font-size: type-scale(2);
-          color: color(base);
-          text-decoration: none;
-          background-color: color(primary);
-          border-radius: $base-line-height / 3;
-          transition: .2s ease-in;
+          @extend %button;
           &:hover {
             background-color: color(secondary);
             transition: .2s ease-in;

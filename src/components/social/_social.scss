@@ -17,3 +17,23 @@
     }
   }
 }
+
+.contact-items {
+  background-color: rgba(0,0,0,.8);
+  li {
+  }
+  svg {
+    fill: color(base);
+    transition: all .2s ease-out;
+    &:hover {
+      @extend %svg-hover-fill;
+    }
+  }
+  button {
+    @extend %button;
+    &:hover {
+      background-color: color(secondary);
+      transition: .2s ease-in;
+    }
+  }
+}

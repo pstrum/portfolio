@@ -18,8 +18,7 @@ gulp.task('sass', function() {
     browsers: ['last 2 versions'],
     cascade: false
   }))
-  // Write source map files to maps directory
-  .pipe(sourcemaps.write('./maps'))
   .pipe(minifyCss({compatibility: 'ie8'}))
+  .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest(config.dest));
 });

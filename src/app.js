@@ -1,1 +1,1 @@
-require('./components/navigation/navigation.js');
+require('./components/social/social.js');
