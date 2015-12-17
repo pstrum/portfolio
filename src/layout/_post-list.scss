@@ -1,0 +1,11 @@
+.post-list {
+  max-width: 500px;
+  padding: $base-line-height 0;
+  h3 {
+    display: inline-block;
+  }
+  p {
+    display: inline-block;
+    float: right;
+  }
+}

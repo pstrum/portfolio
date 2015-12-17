@@ -2,12 +2,6 @@
   p {
     padding: $base-line-height/2 0;
   }
-  a {
-    color: color(tertiary);
-    &:hover {
-      color: color(secondary);
-    }
-  }
   .featured-img {
     &:before {
       border-radius: 5%;
