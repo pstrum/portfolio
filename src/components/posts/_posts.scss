@@ -33,12 +33,13 @@
     padding: 2px 4px;
     font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
     font-size: 70%;
+    line-height: $base-line-height * 1.2;
     color: color(secondary);
     background-color: mix(white, color(secondary), 90%);
     border-radius: 4px;
   }
   pre {
-    padding: $base-line-height $base-line-height $base-line-height / 2;
+    padding: $base-line-height;
     margin-bottom: $base-line-height * 1.5;
     background-color: color(primary);
     white-space: pre;
@@ -53,5 +54,16 @@
       word-spacing: normal;
       word-wrap: normal;
     }
+  }
+  .collage {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img {
+      max-width: 45%;
+    }
+  }
+  figure {
+    margin-bottom: $base-line-height;
   }
 }

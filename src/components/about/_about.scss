@@ -15,18 +15,4 @@
     display: inline-block;
     border-radius: 5%;
   }
-  .img-modal {
-    &:target {
-      background-color: rgba(0,0,0,.8);
-      figcaption {
-        a {
-          @extend %button;
-          &:hover {
-            background-color: color(secondary);
-            transition: .2s ease-in;
-          }
-        }
-      }
-    }
-  }
 }
