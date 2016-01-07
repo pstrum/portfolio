@@ -1,0 +1,137 @@
+<h2>Appbox Rapid Prototype Project</h2>
+
+<p>One skill that I particularly love to develop is quickly translating a design into a fully functional web app/page/site. A couple months ago I recreated the Appbox template homepage with 3 friends in 4 days. It is a massive homepage and was no small feat to construct.</p>
+
+<p>This project really focuses on the presentation layer. There are so many components in the UI and lots of different colors, font sizes, and line heights. In order to create the components in such a short amount of time, we created a <a href="https://github.com/pstrum/AppBox_Reconstruction/blob/master/STYLE_GUIDE.md">style guide</a> that I was in charge of.</p>
+
+<h3>Style Guide Example</h3>
+
+<p>Our team built a single style sheet using Sass. Sass works well with style guides because they translate well into <a href="https://github.com/pstrum/AppBox_Reconstruction/blob/master/sass/utils/_variables.scss">variables</a>, functions, and Sass maps. I had to convince my teammates to try out the power of Sass maps, which they were initally skeptical about but in the end ejoyed their flexibility and organization. Below is a map I made for border colors, notice that they are all based on the four colors of our monochromatic theme.</p>
+
+<pre><code>// MONOCHROMATIC THEME COLOR PALETTE
+
+$theme-colors: (
+  primary: #252525,   //Dark Grey
+  accent: #05c3f9,    //Sky Blue
+  secondary: #383838, //Light Grey
+  base: #ffffff,      //White ------ DOCUMENT BACKGROUND
+);
+// Example Usage: $button-color: color('primary'); // #252525
+
+
+
+// BORDER COLORS
+
+$border-colors: (
+  'primary': mix(white, map-get($theme-colors, primary), 45.5%),  // PRIMARY (GREY) BUTTON/LINK BORDER &amp; SECTION H1 UNDERLINE
+  'accent': mix(black, #05c3f9, 30.1%),   // BORDER FOR ACCENT (BLUE) BUTTON/LINK
+  'profile': mix(black, #05c3f9, 11%),    // QUOTES &amp; TEAM MEMBER IMAGE BORDER
+  'base': mix(black, #05c3f9, 35%),       // BORDER FOR WHITE BUTTON/LINK
+  'input': mix(white, #252525, 39%),      // BOTTOM INPUT FIELD BORDER
+  'new': #037fa2
+);
+// EX: $border-color: border('primary'); // #888888
+</code></pre>
+
+<p>The <code>mix</code> function in Sass is really great because it allowed me to keep all those border colors in relation to the theme (even though they are quite different). The awesome bonus is how adjustable the theme is: if the main colors change, then the border colors will as well.</p>
+
+<h3>Mixins, Placeholders, Tables--Oh my!</h3>
+
+<p><img src="/images/bundles.jpg" alt="Pricing Bundles" title="Pricing Bundle tables from Appbox"></p>
+
+<p>Check out the image above. Do you think these pricing bundle components are <code>&lt;ul&gt;</code> elements or <code>&lt;table&gt;</code> elemenst? They could easily be both! I chose to view them as <code>&lt;table&gt;</code>s because they appear to have a table-like structure with a header row and the same <em>type</em> of items in the sub-rows. But it is much more difficult to style this element as a <code>&lt;table&gt;</code> than an unordered list, especially the change of color on hover and pricing circle component.</p>
+
+<p>Here is how I did it. Because these styles may be reused on subsequent pages, I created a <code>@mixin</code> for the background, font, and border colors:</p>
+
+<pre><code>@mixin background-horiz-line($background-color: color('primary'), $line-color: border('primary')) {
+  background-image: linear-gradient($background-color 49%,
+                    $line-color 49%,
+                    $line-color 50%,
+                    $background-color 50%,
+                    $background-color 100%);
+}
+
+@mixin bundle-theme($font-color, $border-color) {
+  color: $font-color;
+  border-color: $border-color;
+  background-color: transparent;
+}
+
+%table {
+  font-family: $secondary-font;
+  font-size: $font-regular;
+  font-weight: $font-weight-l;
+  text-align: center;
+  border-collapse: collapse;
+  border-width: $input-border-width;
+  border-style: $input-border-style;
+}
+</code></pre>
+
+<p>Notice that the background is actually a <code>linear-gradient</code>. This is because the pricing circle component is actually a row with a horizontal line through it, created with a <code>background: linear-gradient();</code>.</p>
+
+<p><img src="/images/pricing-circle.jgp" alt="Inspector over the Pricing Component" title="Pricing Component"></p>
+
+<p>Also, I really like keeping CSS properties in a pre-defined order so that the team's code is consistent. Notice that ours stayed true to:</p>
+
+<ul>
+<li><code>position</code></li>
+<li><code>display</code></li>
+<li><code>font</code></li>
+<li><code>background</code></li>
+<li><code>border</code></li>
+</ul>
+
+<p>The rest of the bundle styles are <a href="https://github.com/pstrum/AppBox_Reconstruction/blob/master/sass/layout/_discounted-pricing.scss">here</a> (only 100 lines of Sass), and the styling for layout are <a href="https://github.com/pstrum/AppBox_Reconstruction/blob/master/sass/layout/_discounted-pricing.scss">here</a>.</p>
+
+<h3>Pure CSS Sliding Search Field</h3>
+
+<p><img src="/images/search.jpg" alt="AppBox Search Field" title="AppBox Search Field"></p>
+
+<p>The web page features a search icon in the top right corner. This SVG is actually a background image on an <code>&lt;input&gt;</code> element. On <code>:hover</code> the opacity of the element changes, and on <code>:focus</code> the <code>width</code> and <code>background</code> change to give the element a different style, even though it was already there! Here's the code:</p>
+
+<pre><code>.search-field {
+
+  input {
+    padding-bottom: .5em;
+    margin-bottom: 0;
+    width: 1em;
+    font-family: $primary-font;
+    font-size: $font-small;
+    font-weight: $font-weight-l;
+    text-transform: uppercase;
+    background: url('/img/search.svg') no-repeat;
+    background-position: left .2em;
+    background-size: 1em;
+    border: none;
+    -webkit-appearance: none;
+    @include transition(all .3s ease-in);
+    &amp;:hover {
+      opacity: .5;
+      cursor: pointer;
+    }
+  }
+
+  input:focus {
+    width: 40%;
+    margin-left: 10%;
+    padding-left: 1em;
+    background-color: rgba(255,255,255,.2);
+    border-bottom: 1px solid border(primary);
+    &amp;:hover {
+      opacity: 1;
+    }
+    @media screen and (min-width: $break) {
+      width: 14em;
+    }
+  }
+}
+</code></pre>
+
+<p>There are a lot more elements that I contributed code to for this project. Here is a list of some more to check out (with links to the codes on GitHub).</p>
+
+<ul>
+<li><a href="https://github.com/pstrum/AppBox_Reconstruction/blob/master/sass/components/_download.scss">Download links, buttons, and SVGs</a></li>
+<li><a href="https://github.com/pstrum/AppBox_Reconstruction/blob/master/sass/components/_to-top.scss">Back-to-top link</a></li>
+<li><a href="https://github.com/pstrum/AppBox_Reconstruction/blob/master/sass/components/_form.scss">Various forms</a></li>
+</ul>

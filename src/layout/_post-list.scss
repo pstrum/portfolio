@@ -1,0 +1,16 @@
+.post-list {
+  max-width: 500px;
+  padding: $base-line-height 0;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+  }
+  h3 {
+    display: inline-block;
+  }
+  p {
+    display: inline-block;
+  }
+}

@@ -2,12 +2,6 @@
   p {
     padding: $base-line-height/2 0;
   }
-  a {
-    color: color(tertiary);
-    &:hover {
-      color: color(secondary);
-    }
-  }
   .featured-img {
     &:before {
       border-radius: 5%;
@@ -20,19 +14,5 @@
   a[href="#cheers"] {
     display: inline-block;
     border-radius: 5%;
-  }
-  .img-modal {
-    &:target {
-      background-color: rgba(0,0,0,.8);
-      figcaption {
-        a {
-          @extend %button;
-          &:hover {
-            background-color: color(secondary);
-            transition: .2s ease-in;
-          }
-        }
-      }
-    }
   }
 }

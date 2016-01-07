@@ -1,0 +1,69 @@
+.post {
+  h2 {
+    font-size: type-scale(3);
+    padding-bottom: $base-line-height * 2;
+  }
+  h3 {
+    @include vertical-rhythm(2);
+    padding-top: $base-line-height / 2;
+    padding-bottom: $base-line-height;
+  }
+  h4 {
+    font-size: type-scale(1) * 1.1;
+    line-height: $base-line-height * 2.5;
+  }
+  p {
+    padding-bottom: $base-line-height;
+  }
+  ul {
+    padding-bottom: $base-line-height;
+    li {
+      list-style: disc outside;
+      margin-left: $base-line-height * 2;
+    }
+  }
+  ol {
+    padding-bottom: $base-line-height;
+    li {
+      list-style: decimal outside;
+      margin-left: $base-line-height * 2;
+    }
+  }
+  code {
+    padding: 2px 4px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: 70%;
+    line-height: $base-line-height * 1.2;
+    color: color(secondary);
+    background-color: mix(white, color(secondary), 90%);
+    border-radius: 4px;
+  }
+  pre {
+    padding: $base-line-height;
+    margin-bottom: $base-line-height * 1.5;
+    background-color: color(primary);
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+    overflow: auto;
+    code {
+      font-size: 100%;
+      color: color(base);
+      background-color: inherit;
+      white-space: pre;
+      word-spacing: normal;
+      word-wrap: normal;
+    }
+  }
+  .collage {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img {
+      max-width: 45%;
+    }
+  }
+  figure {
+    margin-bottom: $base-line-height;
+  }
+}

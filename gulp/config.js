@@ -24,7 +24,7 @@ module.exports = {
     }
   },
   images: {
-    src: src + '/components/**/*.{png,jpg}',
+    src: src + '/**/*.{png,jpg}',
     dest: dest + '/images'
   },
   fonts: {

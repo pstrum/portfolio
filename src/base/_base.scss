@@ -23,9 +23,16 @@ h3 {
   @include vertical-rhythm(1);
 }
 
-p {
+p, ul, ol {
   font-size: type-scale(1);
   line-height: line-height(0) * 1.5;
+}
+
+a {
+  color: color(tertiary);
+  &:hover {
+    color: color(secondary);
+  }
 }
 
 @media screen and (min-width: $break) {
