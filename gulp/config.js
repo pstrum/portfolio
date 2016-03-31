@@ -11,6 +11,10 @@ module.exports = {
     src: src + '/blog/**/*.html',
     dest: dest + '/blog'
   },
+  interview: {
+    src: src + '/interview-questions/**/*.html',
+    dest: dest + '/interview-questions'
+  },
   projects: {
     src: src + '/projects/**/*.html',
     dest: dest + '/projects'

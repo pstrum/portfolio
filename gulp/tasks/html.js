@@ -11,6 +11,11 @@ gulp.task('blog', function() {
   .pipe(gulp.dest(config.blog.dest));
 });
 
+gulp.task('interview', function() {
+  return gulp.src(config.interview.src)
+  .pipe(gulp.dest(config.interview.dest));
+});
+
 gulp.task('projects', function() {
   return gulp.src(config.projects.src)
   .pipe(gulp.dest(config.projects.dest));

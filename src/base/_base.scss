@@ -35,6 +35,14 @@ a {
   }
 }
 
+button {
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}
+
 @media screen and (min-width: $break) {
   p {
     line-height: line-height(1);

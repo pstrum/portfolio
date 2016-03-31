@@ -1,0 +1,79 @@
+.sub-post {
+  .center {
+    text-align: center;
+  }
+  button {
+    min-height: $base-line-height;
+    margin: $base-line-height * 2 0;
+    span:last-child {
+      display: block;
+    }
+  }
+  .scroll-top {
+    display: inline-block;
+    height: $base-line-height;
+    width: 8px;
+    &.to-top {
+      .arrow-icon-left {
+        opacity: 0;
+        transform: scale(.8) translate(2px, 10px) rotateZ(-45deg);
+        animation: .5s spin;
+      }
+      .arrow-icon-right {
+        opacity: 0;
+        transform: scale(.8) translate(14px, 10px) rotateZ(45deg);
+        animation: .5s reverse-spin;
+      }
+      & + p {
+        opacity: 0;
+        transform: translate(0, 10px);
+        animation: .5s drop;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    opacity: 1;
+    transform: scale(1) translate(0) rotateZ(0);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(.8) translate(2px) rotateZ(-405deg);
+  }
+  to {
+    opacity: 0;
+    transform: scale(.8) translate(14px, 8px) rotateZ(-405deg);
+  }
+}
+
+@keyframes reverse-spin {
+  from {
+    opacity: 1;
+    transform: scale(1) translate(12px, 0px) rotateZ(0);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(.8) translate(14px, 0px) rotateZ(405deg);
+  }
+  to {
+    opacity: 0;
+    transform: scale(.8) translate(14px, 8px) rotateZ(405deg);
+  }
+}
+
+@keyframes drop {
+  from {
+    opacity: 1;
+    transform: scale(1) translate(0);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1) translate(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(.8) translate(0, 8px);
+  }
+}
