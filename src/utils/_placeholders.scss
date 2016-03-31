@@ -1,3 +1,12 @@
+%menu-icons {
+  display: block;
+  position: absolute;
+  height: 4px;
+  background-color: color(accent);
+  border-radius: 2px;
+  transition: .35s transform;
+  will-change: transform;
+}
 %content-padding {
   padding-left: $base-line-height / 1.5;
   padding-right: $base-line-height / 1.5;
@@ -28,4 +37,8 @@
   background-color: color(primary);
   border-radius: $base-line-height / 3;
   transition: .2s ease-in;
+}
+
+%section-bottom-border {
+  border-bottom: 1px solid color(base, dark);
 }

@@ -3,7 +3,7 @@
     fill: mix(white, color(accent, light), 35%);
     transition: .2s ease-out;
   }
-  &:target {
+  &.active-links {
     svg {
       fill: color(tertiary);
     }
