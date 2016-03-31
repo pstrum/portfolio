@@ -17,17 +17,6 @@
 
       delayScroll();
 
-      function delayScroll() {
-        window.setTimeout(function(){
-          $(window).scroll(function(event) {
-
-            $(".social-links").removeClass("active-links");
-            $(window).off('scroll');
-          });
-
-        }, 500);
-      }
-
     } else {
 
       $("html, body").animate( {
@@ -37,4 +26,16 @@
     }
     return false;
   });
+
+  function delayScroll() {
+    window.setTimeout(function(){
+      $(window).scroll(function(event) {
+
+        $(".social-links").removeClass("active-links");
+        $(window).off('scroll');
+      });
+
+    }, 500);
+  }
+
 })();
