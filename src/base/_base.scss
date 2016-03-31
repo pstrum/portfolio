@@ -11,8 +11,9 @@ body {
   background-color: color(base);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, b, strong {
   color: color(primary, dark);
+  font-weight: weight(bold);
 }
 
 h2 {
@@ -26,6 +27,10 @@ h3 {
 p, ul, ol {
   font-size: type-scale(1);
   line-height: line-height(0) * 1.5;
+}
+
+strong {
+  font-weight: weight(bold);
 }
 
 a {
