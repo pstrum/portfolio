@@ -1,0 +1,4 @@
+.bottom-break {
+  @extend %section-bottom-border;
+  margin-bottom: $base-line-height;
+}

@@ -1,0 +1,30 @@
+.sub-post {
+  button {
+    font-weight: weight(bold);
+    text-transform: uppercase;
+    background: none;
+    p {
+      font-size: 11px;
+      line-height: 1;
+    }
+  }
+}
+
+.scroll-top {
+  @include arrow-icon(color(primary));
+  display: block;
+  .arrow-icon-left {
+    @extend %menu-icons;
+    left: -12px;
+    right: 0;
+    bottom: 8px;
+    transform: translate(0) rotate(-45deg);
+  }
+  .arrow-icon-right {
+    @extend %menu-icons;
+    left: -12px;
+    right: 0;
+    bottom: 8px;
+    transform: translate(12px, 0px) rotate(45deg);
+  }
+}
