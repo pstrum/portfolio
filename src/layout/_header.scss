@@ -2,6 +2,7 @@ header {
   @extend %margin-wrapper;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   .header-logo {
     @extend %content-padding;
     display: inline-block;
@@ -29,6 +30,7 @@ header {
     a {
       display: inline-block;
       height: 100%;
+      width: 100%;
     }
     button {
       height: 100%;
@@ -43,11 +45,13 @@ header {
       padding: .4rem 0;
       height: $base-line-height * 2.5;
       max-width: $base-line-height * 2;
+      min-width: $base-line-height * 2;
       &:first-child {
         padding: .3rem 0 .2rem;
       }
     }
     @media screen and (min-width: $break) and (min-height: 500px) {
+      flex-direction: row;
       position: fixed;
       display: inline-block;
       width: auto;
