@@ -13,10 +13,12 @@ footer {
     li {
       display: inline-block;
       height: $base-line-height * 1.5;
+      min-width: $base-line-height * 2;
     }
     a {
       display: inline-block;
       height: 100%;
+      width: 100%;
     }
     svg {
       height: 100%;
