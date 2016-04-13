@@ -77,4 +77,29 @@
   figure {
     margin-bottom: $base-line-height;
   }
+  svg {
+    .bar {
+      fill: color(tertiary);
+    }
+    text {
+      fill: color(primary);
+      text-anchor: middle;
+    }
+  }
+  .axis {
+    text {
+      font-size: type-scale(0);
+    }
+    path {
+      @extend %axis-styles;
+    }
+    line {
+      @extend %axis-styles;
+    }
+    &.y {
+      text {
+        font-size: type-scale(-1);
+      }
+    }
+  }
 }
