@@ -77,6 +77,9 @@
   figure {
     margin-bottom: $base-line-height;
   }
+  select {
+    margin-bottom: $base-line-height;
+  }
   svg {
     .bar {
       fill: color(tertiary);

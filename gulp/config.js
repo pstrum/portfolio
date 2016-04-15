@@ -40,6 +40,10 @@ module.exports = {
     src: src + '/components/**/*.svg',
     dest: dest + '/icons'
   },
+  scripts: {
+    src: src + '/blog/percent-renewable/**/*.js',
+    dest: dest + '/js/'
+  },
   webpack: {
     src: src + '/**/*.js',
     dest: dest + '/js/',
