@@ -11,6 +11,7 @@ gulp.task('watch', function() {
   gulp.watch(config.images.src, ['images']);
   gulp.watch(config.fonts.src, ['fonts']);
   gulp.watch(config.icons.src, ['icons']);
+  gulp.watch(config.scripts.src, ['scripts']);
   gulp.watch(config.webpack.src, ['webpack']);
   gulp.watch(config.server.serverFile, [server.run]);
 });
