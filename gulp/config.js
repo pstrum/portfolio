@@ -28,8 +28,12 @@ module.exports = {
     }
   },
   images: {
-    src: src + '/**/*.{png,jpg}',
+    src: src + '/**/*.{png,jpg,jpeg}',
     dest: dest + '/images'
+  },
+  dayoneimages: {
+    src: src + '/blog/dayone/images/*.{png,jpg,jpeg}',
+    dest: dest + '/images/dayone'
   },
   fonts: {
     src: src + '/fonts/**/*',

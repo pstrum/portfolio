@@ -9,6 +9,7 @@ gulp.task('watch', function() {
   gulp.watch(config.projects.src, ['projects']);
   gulp.watch(config.sass.src, ['sass']);
   gulp.watch(config.images.src, ['images']);
+  gulp.watch(config.dayoneimages.src, ['dayoneimages']);
   gulp.watch(config.fonts.src, ['fonts']);
   gulp.watch(config.icons.src, ['icons']);
   gulp.watch(config.scripts.src, ['scripts']);

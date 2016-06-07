@@ -1,0 +1,63 @@
+%normal-no-extra-height {
+  padding-bottom: $base-line-height;
+  font-weight: normal;
+  line-height: 1;
+}
+.dayone {
+  h1 {
+    font-size: type-scale(0);
+    font-weight: weight(light);
+    color: color(secondary);
+    @media screen and (min-width: $break) {
+      font-size: type-scale(1);
+    }
+  }
+  h2 {
+    @extend %normal-no-extra-height;
+    font-size: type-scale(1);
+    @media screen and (min-width: $break) {
+      font-size: type-scale(2);
+    }
+  }
+  h3 {
+    @extend %normal-no-extra-height;
+    padding-top: 0;
+    font-size: type-scale(0) * 1.2;
+    @media screen and (min-width: $break) {
+      font-size: type-scale(1) * 1.2;
+    }
+  }
+  h4 {
+    @extend %normal-no-extra-height;
+    font-size: type-scale(0) * 1.1;
+    @media screen and (min-width: $break) {
+      font-size: type-scale(1) * 1.1;
+    }
+  }
+  p {
+    @include vertical-rhythm(0);
+    padding-bottom: type-scale(0);
+    @media screen and (min-width: $break) {
+      @include vertical-rhythm(1);
+    }
+  }
+  figure {
+    margin-top: type-scale(-1) / 1.5;
+    margin-bottom: type-scale(-1);
+  }
+  img {
+    vertical-align: bottom;
+  }
+  .dayone-map {
+    height: 150px;
+  }
+  .dayone-location {
+    padding-bottom: 0;
+    font-size: type-scale(-1);
+    font-weight: weight(light);;
+    color: mix(white, color(primary), 30%);
+    @media screen and (min-width: $break) {
+      font-size: type-scale(0);
+    }
+  }
+}
