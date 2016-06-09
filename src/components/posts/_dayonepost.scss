@@ -34,11 +34,13 @@
       font-size: type-scale(1) * 1.1;
     }
   }
-  p {
-    @include vertical-rhythm(0);
-    padding-bottom: type-scale(0);
-    @media screen and (min-width: $break) {
-      @include vertical-rhythm(1);
+  main {
+    p {
+      @include vertical-rhythm(0);
+      padding-bottom: type-scale(0);
+      @media screen and (min-width: $break) {
+        @include vertical-rhythm(1);
+      }
     }
   }
   figure {
@@ -52,12 +54,28 @@
     height: 150px;
   }
   .dayone-location {
+    @include vertical-rhythm(-1);
     padding-bottom: 0;
-    font-size: type-scale(-1);
     font-weight: weight(light);;
     color: mix(white, color(primary), 30%);
     @media screen and (min-width: $break) {
       font-size: type-scale(0);
+    }
+  }
+  .dayone-music {
+    font-size: type-scale(-1);
+    color: color(accent);
+    @media screen and (min-width: $break) {
+      font-size: type-scale(0);
+    }
+    a {
+      font-weight: weight(light);
+      line-height: 1;
+      text-decoration: none;
+      vertical-align: bottom;
+    }
+    .music-note {
+      color: mix(white, color(accent), 50%);
     }
   }
 }
