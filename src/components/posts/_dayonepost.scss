@@ -36,10 +36,17 @@
   }
   main {
     p {
-      @include vertical-rhythm(0);
+      font-size: 1.15rem;
+      line-height: 1.5;
       padding-bottom: type-scale(0);
       @media screen and (min-width: $break) {
         @include vertical-rhythm(1);
+      }
+    }
+    ul {
+      font-size: 1.15rem;
+      @media screen and (min-width: $break) {
+        font-size: type-scale(1);
       }
     }
   }

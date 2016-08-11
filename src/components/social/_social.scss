@@ -12,7 +12,8 @@
     background-color: initial;
     a:hover {
       svg {
-        @extend %svg-hover-fill;
+        fill: color(secondary);
+        transition: all .2s ease-out;
       }
     }
   }
@@ -26,7 +27,8 @@
     fill: color(base);
     transition: all .2s ease-out;
     &:hover {
-      @extend %svg-hover-fill;
+      fill: color(secondary);
+      transition: all .2s ease-out;
     }
   }
   button {

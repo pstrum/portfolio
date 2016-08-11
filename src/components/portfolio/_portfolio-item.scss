@@ -26,7 +26,8 @@
           color: #fff;
           transition: .2s;
           svg {
-            @extend %svg-hover-fill;
+            fill: color(secondary);
+            transition: all .2s ease-out;
           }
         }
         svg {

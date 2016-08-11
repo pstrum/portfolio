@@ -9,7 +9,8 @@
   }
   a:hover {
     svg {
-      @extend %svg-hover-fill;
+      fill: color(secondary);
+      transition: all .2s ease-out;
     }
   }
   @media all and (min-width: $break) and (min-height: 500px) {
