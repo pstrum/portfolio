@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var minifyCss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var handleErrors = require('../util/handleErrors');
 var config = require('../config').sass;
 
@@ -18,7 +18,7 @@ gulp.task('sass', function() {
     browsers: ['last 2 versions'],
     cascade: false
   }))
-  .pipe(minifyCss({compatibility: 'ie8'}))
+  .pipe(cleanCSS({compatibility: 'ie8'}))
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest(config.dest));
 });
