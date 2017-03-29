@@ -1,8 +1,9 @@
 %normal-no-extra-height {
   padding-bottom: $base-line-height;
-  font-weight: normal;
+  font-weight: weight(bold);
   line-height: 1;
 }
+
 .dayone {
   h1 {
     font-size: type-scale(0);
@@ -21,7 +22,7 @@
   }
   h3 {
     @extend %normal-no-extra-height;
-    padding-top: 0;
+    padding-top: type-scale(0);
     font-size: type-scale(0) * 1.2;
     @media screen and (min-width: $break) {
       font-size: type-scale(1) * 1.2;
